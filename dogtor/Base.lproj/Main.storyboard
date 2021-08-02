@@ -456,7 +456,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8eh-Za-iac" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2921.739130434783" y="1478.5714285714284"/>
+            <point key="canvasLocation" x="3735" y="1159"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="q7f-H1-JPk">
@@ -641,28 +641,63 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.38823529410000002" green="0.7725490196" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Google Login"/>
-                                <connections>
-                                    <segue destination="reQ-4U-WJw" kind="show" id="8YX-rg-CL3"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1lR-go-xVv">
                                 <rect key="frame" x="20" y="404" width="374" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.38823529410000002" green="0.7725490196" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Kakao Login"/>
-                                <connections>
-                                    <segue destination="reQ-4U-WJw" kind="show" id="EWz-CJ-jeR"/>
-                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2Nb-TY-5rs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="내정보" id="pOH-8E-aGI"/>
+                    <connections>
+                        <segue destination="reQ-4U-WJw" kind="show" identifier="ghldnjsrkdlqehlsdkdl" id="lDR-SX-rst"/>
+                        <segue destination="G34-Vl-rDQ" kind="show" identifier="cjdmadkdl" id="cLo-hp-lB1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vH4-Db-2ha" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1973.913043478261" y="2236.6071428571427"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="9Pv-Ug-xQi">
+            <objects>
+                <viewController id="G34-Vl-rDQ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RNq-ps-s3O">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zid-os-NZc">
+                                <rect key="frame" x="87" y="152" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l6g-cV-j7g">
+                                <rect key="frame" x="173" y="315" width="140" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="닉네임" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="88M-Jh-71c">
+                                <rect key="frame" x="101" y="322" width="45" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dMR-0H-UqP"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="JCf-dH-u9l">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="mqm-3j-BrC"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="81j-jp-QBd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2921.739130434783" y="2141.5178571428569"/>
         </scene>
         <!--마이페이지-->
         <scene sceneID="tPV-5j-59g">
@@ -805,7 +840,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sq9-k3-M9g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2718.840579710145" y="2236.6071428571427"/>
+            <point key="canvasLocation" x="2922" y="2815"/>
         </scene>
         <!--댕댕추가-->
         <scene sceneID="LLX-Dt-S0a">
@@ -887,7 +922,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4FX-sB-bxy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3734.7826086956525" y="2518.5267857142858"/>
+            <point key="canvasLocation" x="4058" y="2815"/>
         </scene>
         <!--내정보-->
         <scene sceneID="0Ce-ae-X0y">
@@ -939,7 +974,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NG8-ie-O3Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1034.7826086956522" y="2978.5714285714284"/>
+            <point key="canvasLocation" x="2025" y="3660"/>
         </scene>
         <!--댓글단 글-->
         <scene sceneID="0x7-5n-LeY">
@@ -972,7 +1007,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2xh-cJ-ln2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1919" y="2979"/>
+            <point key="canvasLocation" x="2909" y="3661"/>
         </scene>
         <!--'좋아요'한 글-->
         <scene sceneID="ona-df-KUc">
@@ -1005,12 +1040,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EnO-0U-CDd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2745" y="2979"/>
+            <point key="canvasLocation" x="3735" y="3660"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="EWz-CJ-jeR"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="paperplane.fill" catalog="system" width="128" height="118"/>
