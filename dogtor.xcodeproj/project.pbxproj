@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,8 @@
 		0404D60026B3C476008C42BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0404D5FE26B3C476008C42BC /* Main.storyboard */; };
 		0404D60226B3C478008C42BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0404D60126B3C478008C42BC /* Assets.xcassets */; };
 		0404D60526B3C478008C42BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0404D60326B3C478008C42BC /* LaunchScreen.storyboard */; };
+		04CA166126B7E40400C7CEF9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA166026B7E40400C7CEF9 /* LoginViewController.swift */; };
+		967A0493A10937A4F6B82B94 /* Pods_dogtor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F04FBCBC32E1DF25BE5B1E4 /* Pods_dogtor.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,10 @@
 		0404D60126B3C478008C42BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0404D60426B3C478008C42BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0404D60626B3C478008C42BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04CA166026B7E40400C7CEF9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0F04FBCBC32E1DF25BE5B1E4 /* Pods_dogtor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dogtor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		65874096722946F721D1CE7C /* Pods-dogtor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dogtor.debug.xcconfig"; path = "Target Support Files/Pods-dogtor/Pods-dogtor.debug.xcconfig"; sourceTree = "<group>"; };
+		CB6C75418C3AB573D208F42D /* Pods-dogtor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dogtor.release.xcconfig"; path = "Target Support Files/Pods-dogtor/Pods-dogtor.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				967A0493A10937A4F6B82B94 /* Pods_dogtor.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +49,8 @@
 			children = (
 				0404D5F726B3C476008C42BC /* dogtor */,
 				0404D5F626B3C476008C42BC /* Products */,
+				F8E37A1A6B94A434AB822657 /* Pods */,
+				88BD52940947A1CA428907DF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,8 +72,26 @@
 				0404D60126B3C478008C42BC /* Assets.xcassets */,
 				0404D60326B3C478008C42BC /* LaunchScreen.storyboard */,
 				0404D60626B3C478008C42BC /* Info.plist */,
+				04CA166026B7E40400C7CEF9 /* LoginViewController.swift */,
 			);
 			path = dogtor;
+			sourceTree = "<group>";
+		};
+		88BD52940947A1CA428907DF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0F04FBCBC32E1DF25BE5B1E4 /* Pods_dogtor.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F8E37A1A6B94A434AB822657 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				65874096722946F721D1CE7C /* Pods-dogtor.debug.xcconfig */,
+				CB6C75418C3AB573D208F42D /* Pods-dogtor.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +101,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0404D60926B3C478008C42BC /* Build configuration list for PBXNativeTarget "dogtor" */;
 			buildPhases = (
+				6715B0F7C1AE044EA8D3F2CC /* [CP] Check Pods Manifest.lock */,
 				0404D5F126B3C476008C42BC /* Sources */,
 				0404D5F226B3C476008C42BC /* Frameworks */,
 				0404D5F326B3C476008C42BC /* Resources */,
+				AC46BABEAD919A4169202207 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,11 +161,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6715B0F7C1AE044EA8D3F2CC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-dogtor-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC46BABEAD919A4169202207 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-dogtor/Pods-dogtor-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-dogtor/Pods-dogtor-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-dogtor/Pods-dogtor-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0404D5F126B3C476008C42BC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04CA166126B7E40400C7CEF9 /* LoginViewController.swift in Sources */,
 				0404D5FD26B3C476008C42BC /* ViewController.swift in Sources */,
 				0404D5F926B3C476008C42BC /* AppDelegate.swift in Sources */,
 				0404D5FB26B3C476008C42BC /* SceneDelegate.swift in Sources */,
@@ -283,6 +355,7 @@
 		};
 		0404D60A26B3C478008C42BC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65874096722946F721D1CE7C /* Pods-dogtor.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -301,6 +374,7 @@
 		};
 		0404D60B26B3C478008C42BC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB6C75418C3AB573D208F42D /* Pods-dogtor.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
