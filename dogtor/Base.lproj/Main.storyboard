@@ -631,7 +631,7 @@
         <!--내정보-->
         <scene sceneID="e63-fL-Ll8">
             <objects>
-                <viewController id="HJR-N1-ere" sceneMemberID="viewController">
+                <viewController id="HJR-N1-ere" customClass="LoginViewController" customModule="dogtor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VVa-nh-08u">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -641,12 +641,18 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.38823529410000002" green="0.7725490196" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Google Login"/>
+                                <connections>
+                                    <action selector="btnGoogle:" destination="HJR-N1-ere" eventType="touchUpInside" id="Cb8-ZU-05m"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1lR-go-xVv">
                                 <rect key="frame" x="20" y="404" width="374" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.38823529410000002" green="0.7725490196" blue="0.58039215690000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Kakao Login"/>
+                                <connections>
+                                    <action selector="btnKaKao:" destination="HJR-N1-ere" eventType="touchUpInside" id="fWx-mN-MGh"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2Nb-TY-5rs"/>
