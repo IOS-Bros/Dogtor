@@ -13,7 +13,12 @@
 		0404D60026B3C476008C42BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0404D5FE26B3C476008C42BC /* Main.storyboard */; };
 		0404D60226B3C478008C42BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0404D60126B3C478008C42BC /* Assets.xcassets */; };
 		0404D60526B3C478008C42BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0404D60326B3C478008C42BC /* LaunchScreen.storyboard */; };
+		04361D6726B90B75002EE7BE /* CheckLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04361D6626B90B75002EE7BE /* CheckLoginModel.swift */; };
+		04361D6A26B91F89002EE7BE /* UserDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04361D6926B91F89002EE7BE /* UserDBModel.swift */; };
+		04361D6D26B92BD0002EE7BE /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04361D6C26B92BD0002EE7BE /* MyPageViewController.swift */; };
 		04CA166126B7E40400C7CEF9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA166026B7E40400C7CEF9 /* LoginViewController.swift */; };
+		04CA166526B829FF00C7CEF9 /* LoginInsertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA166426B829FF00C7CEF9 /* LoginInsertModel.swift */; };
+		04CA166826B82C7700C7CEF9 /* LoginInsertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA166726B82C7700C7CEF9 /* LoginInsertViewController.swift */; };
 		967A0493A10937A4F6B82B94 /* Pods_dogtor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F04FBCBC32E1DF25BE5B1E4 /* Pods_dogtor.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,7 +31,12 @@
 		0404D60126B3C478008C42BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0404D60426B3C478008C42BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0404D60626B3C478008C42BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04361D6626B90B75002EE7BE /* CheckLoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckLoginModel.swift; sourceTree = "<group>"; };
+		04361D6926B91F89002EE7BE /* UserDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDBModel.swift; sourceTree = "<group>"; };
+		04361D6C26B92BD0002EE7BE /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		04CA166026B7E40400C7CEF9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		04CA166426B829FF00C7CEF9 /* LoginInsertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInsertModel.swift; sourceTree = "<group>"; };
+		04CA166726B82C7700C7CEF9 /* LoginInsertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInsertViewController.swift; sourceTree = "<group>"; };
 		0F04FBCBC32E1DF25BE5B1E4 /* Pods_dogtor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dogtor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		65874096722946F721D1CE7C /* Pods-dogtor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dogtor.debug.xcconfig"; path = "Target Support Files/Pods-dogtor/Pods-dogtor.debug.xcconfig"; sourceTree = "<group>"; };
 		CB6C75418C3AB573D208F42D /* Pods-dogtor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dogtor.release.xcconfig"; path = "Target Support Files/Pods-dogtor/Pods-dogtor.release.xcconfig"; sourceTree = "<group>"; };
@@ -69,10 +79,15 @@
 				0404D5FA26B3C476008C42BC /* SceneDelegate.swift */,
 				0404D5FC26B3C476008C42BC /* ViewController.swift */,
 				0404D5FE26B3C476008C42BC /* Main.storyboard */,
+				04CA166026B7E40400C7CEF9 /* LoginViewController.swift */,
+				04CA166726B82C7700C7CEF9 /* LoginInsertViewController.swift */,
 				0404D60126B3C478008C42BC /* Assets.xcassets */,
 				0404D60326B3C478008C42BC /* LaunchScreen.storyboard */,
 				0404D60626B3C478008C42BC /* Info.plist */,
-				04CA166026B7E40400C7CEF9 /* LoginViewController.swift */,
+				04CA166426B829FF00C7CEF9 /* LoginInsertModel.swift */,
+				04361D6626B90B75002EE7BE /* CheckLoginModel.swift */,
+				04361D6926B91F89002EE7BE /* UserDBModel.swift */,
+				04361D6C26B92BD0002EE7BE /* MyPageViewController.swift */,
 			);
 			path = dogtor;
 			sourceTree = "<group>";
@@ -209,9 +224,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				04CA166126B7E40400C7CEF9 /* LoginViewController.swift in Sources */,
+				04361D6D26B92BD0002EE7BE /* MyPageViewController.swift in Sources */,
+				04361D6726B90B75002EE7BE /* CheckLoginModel.swift in Sources */,
+				04361D6A26B91F89002EE7BE /* UserDBModel.swift in Sources */,
 				0404D5FD26B3C476008C42BC /* ViewController.swift in Sources */,
 				0404D5F926B3C476008C42BC /* AppDelegate.swift in Sources */,
+				04CA166826B82C7700C7CEF9 /* LoginInsertViewController.swift in Sources */,
 				0404D5FB26B3C476008C42BC /* SceneDelegate.swift in Sources */,
+				04CA166526B829FF00C7CEF9 /* LoginInsertModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
