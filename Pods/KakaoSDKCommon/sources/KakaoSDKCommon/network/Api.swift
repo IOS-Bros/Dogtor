@@ -108,10 +108,10 @@ extension Api {
                     }
                 }
                 else {
-                    return .failure(SdkError())
+                    return .failure(SdkError(reason: .Unknown, message: "data is nil."))
                 }
             })
-            .responseData { response in
+            .responseData { [unowned self] response in
                 if let afError = response.error {
                     if let retryError = self.getRequestRetryFailedError(error:afError) {
                         SdkLog.e("response:\n api error: \(retryError)")
