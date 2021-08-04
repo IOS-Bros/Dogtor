@@ -9,8 +9,16 @@ import UIKit
 import GoogleSignIn
 import KakaoSDKAuth
 import KakaoSDKUser
+import KakaoSDKTalk
+
+let myURL = "127.0.0.1"
 
 class LoginViewController: UIViewController {
+    @IBOutlet weak var imgTest: UIImageView!
+    
+    var API : String = ""
+    var userEmail : String = ""
+    var userImageURL : URL?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,40 +26,79 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     @IBAction func btnGoogle(_ sender: UIButton) {
+        
         let signInConfig = GIDConfiguration.init(clientID: "619955076758-7f30hc5sr2ses6ioljsco1uqgat4hbv4.apps.googleusercontent.com")
         
         GIDSignIn.sharedInstance.signIn(with: signInConfig, presenting: self) { user, error in
-            guard error == nil else { return }
-
-            // If sign in succeeded, display the app's main content View.
+            guard error == nil else {
+                return
+            }
+  
+//            print("이미지 : \(user?.profile?.imageURL(withDimension: 100))")
+            self.API = "Google"
+            self.userEmail = (user?.profile!.email)!
+            self.userImageURL = (user?.profile?.imageURL(withDimension: 100))!
+            self.checkLogin(self.userEmail)
+            
+            print("checkLogin->btnGoogle : \(self.userEmail)")
           }
+        
     }
     
     @IBAction func btnKaKao(_ sender: UIButton) {
+        
         UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
                 if let error = error {
-                    print(error)
+                    print("Error1: \(error.localizedDescription)")
                 }
                 else {
                     print("loginWithKakaoAccount() success.")
+                    TalkApi.shared.profile {(profile, error) in
+                        if let error = error {
+                            print("프로필 : \(error.localizedDescription)")
+                        } else {
+                            print("profile() success.")
+                            self.userImageURL = profile?.thumbnailUrl!
+                            print("이미지 : \(self.userImageURL)")
+                            //do something
+                            _ = profile
+                        }
+                    }
                     UserApi.shared.me(completion: { (user, error) in
                         if let error = error {
-                                print(error)
-                            }
-                            else {
+                            print("Error2: \(error.localizedDescription)")
+                            } else {
                                 print("me() success.")
-                                print("\(user?.kakaoAccount?.profile!)")
-                                print("\(user?.kakaoAccount?.email!)")
+                                self.userEmail = (user?.kakaoAccount?.email!)!
+                                print("로그인 : \(self.userEmail)")
+                                self.API = "kakao"
 
-                                //do something
-                                _ = user
+                                self.checkLogin(self.userEmail)
                             }
                     })
-                    //do something
-//                    _ = oauthToken
+                    
                 }
             }
+        
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "firstLogin" {
+            let loginInsertView = segue.destination as! LoginInsertViewController
+            print("prepare : \(API), \(userEmail), \(userImageURL)")
+            loginInsertView.receiveUserInfo(API, userEmail, userImageURL!)
+        }
+    }
+    
+    
+    func checkLogin(_ email : String) {
+        let checkLoginModel = CheckLoginModel()
+        checkLoginModel.checkUser(userEmail)
+        checkLoginModel.delegate = self
+    }
+    
+    
+    
     
     /*
     // MARK: - Navigation
@@ -63,4 +110,18 @@ class LoginViewController: UIViewController {
     }
     */
 
+}
+
+
+extension UIViewController : CheckLoginModelProtocol {
+    func itemDownloaded(items: NSMutableArray) {
+        let userDB: UserDBModel = items[0] as! UserDBModel
+        
+        print("CheckLoginModelProtocol : \(userDB.API)")
+        if userDB.API == "0" {
+            performSegue(withIdentifier: "firstLogin", sender: self)
+        } else {
+            performSegue(withIdentifier: "existingLogin", sender: self)
+        }
+    }
 }

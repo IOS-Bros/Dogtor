@@ -660,18 +660,18 @@
                     </view>
                     <navigationItem key="navigationItem" title="내정보" id="pOH-8E-aGI"/>
                     <connections>
-                        <segue destination="reQ-4U-WJw" kind="show" identifier="ghldnjsrkdlqehlsdkdl" id="lDR-SX-rst"/>
-                        <segue destination="G34-Vl-rDQ" kind="show" identifier="cjdmadkdl" id="cLo-hp-lB1"/>
+                        <segue destination="reQ-4U-WJw" kind="show" identifier="existingLogin" id="lDR-SX-rst"/>
+                        <segue destination="G34-Vl-rDQ" kind="show" identifier="firstLogin" id="73W-vf-1hB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vH4-Db-2ha" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1973.913043478261" y="2236.6071428571427"/>
         </scene>
-        <!--View Controller-->
+        <!--Login Insert View Controller-->
         <scene sceneID="9Pv-Ug-xQi">
             <objects>
-                <viewController id="G34-Vl-rDQ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="insert" id="G34-Vl-rDQ" customClass="LoginInsertViewController" customModule="dogtor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RNq-ps-s3O">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -698,8 +698,16 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="JCf-dH-u9l">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="mqm-3j-BrC"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="mqm-3j-BrC">
+                            <connections>
+                                <action selector="btnFinish:" destination="G34-Vl-rDQ" id="6da-uJ-vTe"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="Zid-os-NZc" id="lA1-zV-nMW"/>
+                        <outlet property="tfNicName" destination="l6g-cV-j7g" id="PjH-mM-STI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="81j-jp-QBd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -708,7 +716,7 @@
         <!--마이페이지-->
         <scene sceneID="tPV-5j-59g">
             <objects>
-                <viewController id="reQ-4U-WJw" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="myPageVC" id="reQ-4U-WJw" customClass="MyPageViewController" customModule="dogtor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="s01-yy-wjz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
