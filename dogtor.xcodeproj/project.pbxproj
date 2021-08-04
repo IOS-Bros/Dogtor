@@ -14,6 +14,9 @@
 		0404D60226B3C478008C42BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0404D60126B3C478008C42BC /* Assets.xcassets */; };
 		0404D60526B3C478008C42BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0404D60326B3C478008C42BC /* LaunchScreen.storyboard */; };
 		04CA166126B7E40400C7CEF9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA166026B7E40400C7CEF9 /* LoginViewController.swift */; };
+		375CC77F26B91433005ADF38 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375CC77E26B91433005ADF38 /* MapViewController.swift */; };
+		375CC78126B91459005ADF38 /* MapDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375CC78026B91459005ADF38 /* MapDBModel.swift */; };
+		375CC78326B91D75005ADF38 /* MapQueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375CC78226B91D75005ADF38 /* MapQueryModel.swift */; };
 		967A0493A10937A4F6B82B94 /* Pods_dogtor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F04FBCBC32E1DF25BE5B1E4 /* Pods_dogtor.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +31,9 @@
 		0404D60626B3C478008C42BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04CA166026B7E40400C7CEF9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0F04FBCBC32E1DF25BE5B1E4 /* Pods_dogtor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dogtor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		375CC77E26B91433005ADF38 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		375CC78026B91459005ADF38 /* MapDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDBModel.swift; sourceTree = "<group>"; };
+		375CC78226B91D75005ADF38 /* MapQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapQueryModel.swift; sourceTree = "<group>"; };
 		65874096722946F721D1CE7C /* Pods-dogtor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dogtor.debug.xcconfig"; path = "Target Support Files/Pods-dogtor/Pods-dogtor.debug.xcconfig"; sourceTree = "<group>"; };
 		CB6C75418C3AB573D208F42D /* Pods-dogtor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dogtor.release.xcconfig"; path = "Target Support Files/Pods-dogtor/Pods-dogtor.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,6 +79,9 @@
 				0404D60326B3C478008C42BC /* LaunchScreen.storyboard */,
 				0404D60626B3C478008C42BC /* Info.plist */,
 				04CA166026B7E40400C7CEF9 /* LoginViewController.swift */,
+				375CC77E26B91433005ADF38 /* MapViewController.swift */,
+				375CC78026B91459005ADF38 /* MapDBModel.swift */,
+				375CC78226B91D75005ADF38 /* MapQueryModel.swift */,
 			);
 			path = dogtor;
 			sourceTree = "<group>";
@@ -208,9 +217,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				375CC78126B91459005ADF38 /* MapDBModel.swift in Sources */,
+				375CC78326B91D75005ADF38 /* MapQueryModel.swift in Sources */,
 				04CA166126B7E40400C7CEF9 /* LoginViewController.swift in Sources */,
 				0404D5FD26B3C476008C42BC /* ViewController.swift in Sources */,
 				0404D5F926B3C476008C42BC /* AppDelegate.swift in Sources */,
+				375CC77F26B91433005ADF38 /* MapViewController.swift in Sources */,
 				0404D5FB26B3C476008C42BC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
