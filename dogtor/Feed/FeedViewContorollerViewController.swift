@@ -14,8 +14,21 @@ class FeedViewContorollerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        feedListTableView.rowHeight = 400
+        feedListTableView.estimatedRowHeight = 400
 
-        // Do any additional setup after loading the view.
+        feedListTableView.delegate = self
+        feedListTableView.dataSource = self
+        
+        let FeedSelectAllModel = FeedSelectAllModel()
+        FeedSelectAllModel.delegate = self
+        FeedSelectAllModel.feedDownloaded()
+        
+        feedListTableView.reloadData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+
     }
     
 
@@ -30,16 +43,47 @@ class FeedViewContorollerViewController: UIViewController {
     */
 
 }
+extension FeedViewContorollerViewController: FeedSelectAllModelProtocol{
+    func feedDownloaded(items: NSMutableArray) {
+        feedItem = items
+        self.feedListTableView.reloadData()
+    }
+    
+    
+}
+
+// MARK: - Table view data source
 
 extension FeedViewContorollerViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return feedItem.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = feedListTableView.dequeueReusableCell(withIdentifier: "feedCell", for: indexPath) as! feddViewCell
+        
+        let item: feedModel = feedItem[indexPath.row] as! feedModel
+        
+        /*
+         @IBOutlet weak var feedImage: UIImageView!
+         @IBOutlet weak var writerImage: UIImageView!
+         @IBOutlet weak var writerName: UILabel!
+         @IBOutlet weak var submitDate: UILabel!
+         @IBOutlet weak var content: UILabel!
+         */
+        
+        cell.no = item.fNo
+        cell.writerName.text = item.fWriter
+        cell.submitDate.text = item.fSubmitDate
+        cell.content.text = item.fContent
+        
+        print("\(indexPath.row)번째 셀의 데이터")
+        item.printAll()
+        
+        return cell
     }
+    
     
     
 }

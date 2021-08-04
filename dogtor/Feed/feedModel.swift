@@ -28,5 +28,7 @@ class feedModel{
         self.fImages = images
     }
     
-    
+    func printAll(){
+        print("no : \(fNo), date : \(fSubmitDate), content : \(fContent), writer : \(fWriter)")
+    }
 }

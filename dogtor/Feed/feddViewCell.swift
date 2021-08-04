@@ -8,7 +8,8 @@
 import UIKit
 
 class feddViewCell: UITableViewCell {
-
+    
+    var no: Int?
     @IBOutlet weak var feedImage: UIImageView!
     @IBOutlet weak var writerImage: UIImageView!
     @IBOutlet weak var writerName: UILabel!

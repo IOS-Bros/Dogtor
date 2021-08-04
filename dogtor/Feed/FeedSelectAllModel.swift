@@ -13,7 +13,7 @@ protocol FeedSelectAllModelProtocol{
 
 class FeedSelectAllModel{
     var delegate: FeedSelectAllModelProtocol!
-    let urlPath = "http://172.30.1.1:8080/ios/feed_select_all.jsp"
+    let urlPath = "http://172.30.1.1:8080/dogtor_temp/feed_select_all.jsp"
     
     func feedDownloaded(){
         guard let url: URL = URL(string: urlPath) else {
@@ -34,6 +34,14 @@ class FeedSelectAllModel{
     }//feedDownloaded
     
     func parseJSON(_ data: Data){
+        if let returnData = String(data: data, encoding: .utf8) {
+            print(returnData)
+        } else {
+            print("data is empty")
+            
+        }
+        print("--------------------")
+        
         var jsonResult = NSArray()
         
         do{
@@ -47,11 +55,12 @@ class FeedSelectAllModel{
         
         for i in 0..<jsonResult.count{
             jsonElement = jsonResult[i] as! NSDictionary
-            if let fNo = jsonElement["fNo"] as? Int,
+            if let fNo = jsonElement["fNo"] as? String,
                let fSubmitDate = jsonElement["fSubmitDate"] as? String,
                let fContent = jsonElement["fContent"] as? String,
-               let fWriter = jsonElement["fWriter"] as? String{
-                let dto = feedModel(no: fNo, submitDate: fSubmitDate, content: fContent, writer: fWriter)
+               let fWriter = jsonElement["fWirter"] as? String{
+                let dto = feedModel(no: Int(fNo)!, submitDate: fSubmitDate, content: fContent, writer: fWriter)
+                dto.printAll()
                 locations.add(dto)
             }
         }
