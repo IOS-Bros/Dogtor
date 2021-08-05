@@ -35,14 +35,17 @@ class LoginInsertViewController: UIViewController {
     @IBAction func btnFinish(_ sender: UIBarButtonItem) {
         print("btnFinish")
         userNicName = tfNicName.text!
+        //210805
         
+        //--
         let loginInsertModel = LoginInsertModel()
         let result = loginInsertModel.insertGoogle(receiveGoogle, receiveUserEmail, receiveUserImageURL!, userNicName)
         
         if result {
             let resultAlert = UIAlertController(title: "완료", message: "입력이 되었습니다", preferredStyle: .alert)
             let onAction = UIAlertAction(title: "OK", style: .default, handler: {ACTION in
-                self.navigationController?.popViewController(animated: true)
+//                self.navigationController?.popViewController(animated: true)
+                self.performSegue(withIdentifier: "goMyPage", sender: self)
             })
             
             resultAlert.addAction(onAction)

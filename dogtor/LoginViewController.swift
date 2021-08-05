@@ -22,7 +22,9 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if let userEmail = UserDefaults.standard.string(forKey: "Email") {
+            performSegue(withIdentifier: "existingLogin", sender: self)
+        }
         // Do any additional setup after loading the view.
     }
     @IBAction func btnGoogle(_ sender: UIButton) {
@@ -116,6 +118,8 @@ class LoginViewController: UIViewController {
 extension UIViewController : CheckLoginModelProtocol {
     func itemDownloaded(items: NSMutableArray) {
         let userDB: UserDBModel = items[0] as! UserDBModel
+        UserDefaults.standard.set(userDB.email, forKey: "Email")
+        
         
         print("CheckLoginModelProtocol : \(userDB.API)")
         if userDB.API == "0" {
