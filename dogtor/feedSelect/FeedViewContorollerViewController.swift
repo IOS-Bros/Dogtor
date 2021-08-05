@@ -14,6 +14,7 @@ class FeedViewContorollerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //이후 수정
         feedListTableView.rowHeight = 400
         feedListTableView.estimatedRowHeight = 400
 

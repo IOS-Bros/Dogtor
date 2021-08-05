@@ -13,7 +13,7 @@ protocol FeedSelectAllModelProtocol{
 
 class FeedSelectAllModel{
     var delegate: FeedSelectAllModelProtocol!
-    let urlPath = "http://172.30.1.1:8080/dogtor_temp/feed_select_all.jsp"
+    let urlPath = "http://\(Common.ipAddr):8080//dogtor_temp/feed_select_all.jsp"
     
     func feedDownloaded(){
         guard let url: URL = URL(string: urlPath) else {
