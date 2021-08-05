@@ -115,7 +115,7 @@ class LoginViewController: UIViewController {
 }
 
 
-extension UIViewController : CheckLoginModelProtocol {
+extension LoginViewController : CheckLoginModelProtocol {
     func itemDownloaded(items: NSMutableArray) {
         let userDB: UserDBModel = items[0] as! UserDBModel
         UserDefaults.standard.set(userDB.email, forKey: "Email")

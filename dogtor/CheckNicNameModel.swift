@@ -8,18 +8,22 @@
 import Foundation
 
 // 값을 다른곳으로 줄때 쓰는것
-protocol CheckNicNameModelProtocol : class {
+protocol CheckNicNameModelProtocol {
     func itemDownloaded(items : NSMutableArray)
 }
 
 class CheckNicNameModel : NSObject {
    
-    var delegate : CheckLoginModelProtocol!
+    var delegate : CheckNicNameModelProtocol!
     
     
-    func checkUser(_ nickName : String) {
-        let urlPath = "http://\(myURL):8080/dogtor/check_user.jsp?nickName=\(nickName)"
-        print(urlPath)
+    func checkNickName(_ nickName : String) {
+        print("model : \(nickName)")
+        var urlPath = "http://\(myURL):8080/dogtor/check_nickName.jsp?nickName=\(nickName)"
+        print("model : \(urlPath)")
+        
+        urlPath = urlPath.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+        
         let url : URL = URL(string: urlPath)!
         let defaultSession = URLSession(configuration: URLSessionConfiguration.default)
         let task = defaultSession.dataTask(with: url) {(data, response, error) in
@@ -49,10 +53,10 @@ class CheckNicNameModel : NSObject {
         for i in 0..<jsonResult.count {
             print("gma?")
             jsonElement = jsonResult[i] as! NSDictionary
-            if let email = jsonElement["email"] as? String,
-               let API = jsonElement["API"] as? String {
-                print("Model : \(email)")
-                let query = UserDBModel(API: API, email: email)
+            print("dho?")
+            if let nickName = jsonElement["nickName"] as? String {
+                print("Model : \(nickName)")
+                let query = UserDBModel(nickName: nickName)
                 locations.add(query)
             }
         }
