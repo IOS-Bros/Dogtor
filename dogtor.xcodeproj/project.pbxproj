@@ -17,6 +17,7 @@
 		375CC77F26B91433005ADF38 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375CC77E26B91433005ADF38 /* MapViewController.swift */; };
 		375CC78126B91459005ADF38 /* MapDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375CC78026B91459005ADF38 /* MapDBModel.swift */; };
 		375CC78326B91D75005ADF38 /* MapQueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375CC78226B91D75005ADF38 /* MapQueryModel.swift */; };
+		375CC7B826BB93B8005ADF38 /* MapDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375CC7B726BB93B8005ADF38 /* MapDetailViewController.swift */; };
 		967A0493A10937A4F6B82B94 /* Pods_dogtor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F04FBCBC32E1DF25BE5B1E4 /* Pods_dogtor.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +35,7 @@
 		375CC77E26B91433005ADF38 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		375CC78026B91459005ADF38 /* MapDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDBModel.swift; sourceTree = "<group>"; };
 		375CC78226B91D75005ADF38 /* MapQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapQueryModel.swift; sourceTree = "<group>"; };
+		375CC7B726BB93B8005ADF38 /* MapDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapDetailViewController.swift; sourceTree = "<group>"; };
 		65874096722946F721D1CE7C /* Pods-dogtor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dogtor.debug.xcconfig"; path = "Target Support Files/Pods-dogtor/Pods-dogtor.debug.xcconfig"; sourceTree = "<group>"; };
 		CB6C75418C3AB573D208F42D /* Pods-dogtor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dogtor.release.xcconfig"; path = "Target Support Files/Pods-dogtor/Pods-dogtor.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,6 +84,7 @@
 				375CC77E26B91433005ADF38 /* MapViewController.swift */,
 				375CC78026B91459005ADF38 /* MapDBModel.swift */,
 				375CC78226B91D75005ADF38 /* MapQueryModel.swift */,
+				375CC7B726BB93B8005ADF38 /* MapDetailViewController.swift */,
 			);
 			path = dogtor;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				375CC7B826BB93B8005ADF38 /* MapDetailViewController.swift in Sources */,
 				375CC78126B91459005ADF38 /* MapDBModel.swift in Sources */,
 				375CC78326B91D75005ADF38 /* MapQueryModel.swift in Sources */,
 				04CA166126B7E40400C7CEF9 /* LoginViewController.swift in Sources */,
