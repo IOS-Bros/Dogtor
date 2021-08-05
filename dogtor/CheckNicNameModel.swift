@@ -23,6 +23,7 @@ class CheckNicNameModel : NSObject {
         print("model : \(urlPath)")
         
         urlPath = urlPath.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+        
         let url : URL = URL(string: urlPath)!
         let defaultSession = URLSession(configuration: URLSessionConfiguration.default)
         let task = defaultSession.dataTask(with: url) {(data, response, error) in
