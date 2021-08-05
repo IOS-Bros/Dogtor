@@ -22,4 +22,9 @@ class UserDBModel : NSObject {
         self.API = API
         self.email = email
     }
+    // 20210805 - yejin
+    init(nickName : String) {
+        self.nickName = nickName
+    }
+    // --
 }

@@ -693,6 +693,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PPX-hS-oMW">
+                                <rect key="frame" x="181" y="374" width="52" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="중복확인"/>
+                                <connections>
+                                    <action selector="btnDuplicateCheck:" destination="G34-Vl-rDQ" eventType="touchUpInside" id="1Kt-NJ-40E"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dMR-0H-UqP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
