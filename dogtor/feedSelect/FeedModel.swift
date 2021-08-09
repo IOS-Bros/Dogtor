@@ -15,6 +15,14 @@ class FeedModel{
     var imageName: String?
     var imageURL: URL?
     
+    //test용
+    init (fNo: Int){
+        self.fNo = fNo
+        fContent = String(fNo)
+        fWriter = "Greensky"
+        
+    }
+    
     //insert용 버전
     init(fContent: String, fWriter: String, imageURL: URL) {
         self.fContent = fContent
@@ -23,8 +31,8 @@ class FeedModel{
     }
     
     //image table load 후 합본 버전
-    init(fno: Int, fSubmitDate: String, fContent: String, fWriter: String, imageName: String) {
-        self.fNo = fno
+    init(fNo: Int, fSubmitDate: String, fContent: String, fWriter: String, imageName: String) {
+        self.fNo = fNo
         self.fSubmitDate = fSubmitDate
         self.fContent = fContent
         self.fWriter = fWriter
@@ -32,11 +40,15 @@ class FeedModel{
     }
     
     //select시 image없는 초기 버젼
-    init(fno: Int, fSubmitDate: String, fContent: String, fWriter: String) {
-        self.fNo = fno
+    init(fNo: Int, fSubmitDate: String, fContent: String, fWriter: String) {
+        self.fNo = fNo
         self.fSubmitDate = fSubmitDate
         self.fContent = fContent
         self.fWriter = fWriter
+    }
+    
+    func printAllFromSelectModel(){
+        print("fNo: \(fNo), fContent : \(fContent), fWriter : \(fWriter)")
     }
     
     func printAllFromInsertModel(){

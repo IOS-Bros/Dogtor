@@ -59,8 +59,8 @@ class FeedSelectAllModel{
                let fSubmitDate = jsonElement["fSubmitDate"] as? String,
                let fContent = jsonElement["fContent"] as? String,
                let fWriter = jsonElement["fWirter"] as? String{
-                let dto = feedModel(no: Int(fNo)!, submitDate: fSubmitDate, content: fContent, writer: fWriter)
-                dto.printAll()
+                let dto = FeedModel(fNo: Int(fNo)!, fSubmitDate: fSubmitDate, fContent: fContent.replacingOccurrences(of: "[__empty_space__]", with: "\n"), fWriter: fWriter)
+                dto.printAllFromSelectModel()
                 locations.add(dto)
             }
         }

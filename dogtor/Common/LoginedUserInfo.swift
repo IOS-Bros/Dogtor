@@ -10,6 +10,8 @@ import Foundation
 
 class LoginedUserInfo{
     static var loginedUserInfo: LoginedUserInfo? = nil
+    var user = UserDBModel()
+    
     //userMode: UserModel = UserModel()
     
     private init(){}
@@ -23,4 +25,6 @@ class LoginedUserInfo{
         return self.loginedUserInfo!
     }
     
+    
+
 }

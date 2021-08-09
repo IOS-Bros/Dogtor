@@ -15,8 +15,7 @@
 		0404D60526B3C478008C42BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0404D60326B3C478008C42BC /* LaunchScreen.storyboard */; };
 		04CA166126B7E40400C7CEF9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CA166026B7E40400C7CEF9 /* LoginViewController.swift */; };
 		0666C2F59BEBB4CE96E6B8C4 /* Pods_dogtor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4389ABD6F26369C5DFBC880D /* Pods_dogtor.framework */; };
-		803EBB0626BA59BE00D5D350 /* feedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803EBB0526BA59BE00D5D350 /* feedModel.swift */; };
-		803EBB0826BA782F00D5D350 /* FeedViewContorollerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803EBB0726BA782F00D5D350 /* FeedViewContorollerViewController.swift */; };
+		803EBB0826BA782F00D5D350 /* FeedViewContoroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803EBB0726BA782F00D5D350 /* FeedViewContoroller.swift */; };
 		803EBB0A26BA786500D5D350 /* feddViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803EBB0926BA786500D5D350 /* feddViewCell.swift */; };
 		803EBB0C26BA7E0E00D5D350 /* FeedSelectAllModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803EBB0B26BA7E0E00D5D350 /* FeedSelectAllModel.swift */; };
 		803EBB0E26BAD58100D5D350 /* FeedAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803EBB0D26BAD58100D5D350 /* FeedAddViewController.swift */; };
@@ -24,6 +23,10 @@
 		803EBB1326BC01D200D5D350 /* FeedUploadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803EBB1226BC01D200D5D350 /* FeedUploadModel.swift */; };
 		803EBB1526BC021100D5D350 /* FeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803EBB1426BC021100D5D350 /* FeedModel.swift */; };
 		803EBB1826BC369A00D5D350 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803EBB1726BC369A00D5D350 /* Common.swift */; };
+		803EBB1A26BC3FF700D5D350 /* FeedImageSelectAllModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803EBB1926BC3FF700D5D350 /* FeedImageSelectAllModel.swift */; };
+		803EBB1C26BD268C00D5D350 /* UserDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803EBB1B26BD268C00D5D350 /* UserDBModel.swift */; };
+		803EBB1F26BD4F8700D5D350 /* FeedImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803EBB1E26BD4F8700D5D350 /* FeedImageModel.swift */; };
+		803EBB2226C187DD00D5D350 /* FeedAddCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803EBB2126C187DD00D5D350 /* FeedAddCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,8 +41,7 @@
 		04CA166026B7E40400C7CEF9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2FCA25197BBE11157DF85913 /* Pods-dogtor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dogtor.release.xcconfig"; path = "Target Support Files/Pods-dogtor/Pods-dogtor.release.xcconfig"; sourceTree = "<group>"; };
 		4389ABD6F26369C5DFBC880D /* Pods_dogtor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dogtor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		803EBB0526BA59BE00D5D350 /* feedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = feedModel.swift; sourceTree = "<group>"; };
-		803EBB0726BA782F00D5D350 /* FeedViewContorollerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewContorollerViewController.swift; sourceTree = "<group>"; };
+		803EBB0726BA782F00D5D350 /* FeedViewContoroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewContoroller.swift; sourceTree = "<group>"; };
 		803EBB0926BA786500D5D350 /* feddViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = feddViewCell.swift; sourceTree = "<group>"; };
 		803EBB0B26BA7E0E00D5D350 /* FeedSelectAllModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSelectAllModel.swift; sourceTree = "<group>"; };
 		803EBB0D26BAD58100D5D350 /* FeedAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedAddViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +49,10 @@
 		803EBB1226BC01D200D5D350 /* FeedUploadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedUploadModel.swift; sourceTree = "<group>"; };
 		803EBB1426BC021100D5D350 /* FeedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedModel.swift; sourceTree = "<group>"; };
 		803EBB1726BC369A00D5D350 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		803EBB1926BC3FF700D5D350 /* FeedImageSelectAllModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageSelectAllModel.swift; sourceTree = "<group>"; };
+		803EBB1B26BD268C00D5D350 /* UserDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDBModel.swift; sourceTree = "<group>"; };
+		803EBB1E26BD4F8700D5D350 /* FeedImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageModel.swift; sourceTree = "<group>"; };
+		803EBB2126C187DD00D5D350 /* FeedAddCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedAddCollectionViewCell.swift; sourceTree = "<group>"; };
 		BEC5D6B68CCA7C4C62EFFF19 /* Pods-dogtor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dogtor.debug.xcconfig"; path = "Target Support Files/Pods-dogtor/Pods-dogtor.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,6 +89,8 @@
 		0404D5F726B3C476008C42BC /* dogtor */ = {
 			isa = PBXGroup;
 			children = (
+				803EBB2026C1878200D5D350 /* FeedHashTag */,
+				803EBB1D26BD4F6900D5D350 /* FeedImage */,
 				803EBB1626BC369000D5D350 /* Common */,
 				803EBB1126BC01B400D5D350 /* feedInsert */,
 				803EBB0426BA59AE00D5D350 /* feedSelect */,
@@ -101,11 +109,10 @@
 		803EBB0426BA59AE00D5D350 /* feedSelect */ = {
 			isa = PBXGroup;
 			children = (
-				803EBB0526BA59BE00D5D350 /* feedModel.swift */,
-				803EBB0726BA782F00D5D350 /* FeedViewContorollerViewController.swift */,
+				803EBB0726BA782F00D5D350 /* FeedViewContoroller.swift */,
 				803EBB0926BA786500D5D350 /* feddViewCell.swift */,
 				803EBB0B26BA7E0E00D5D350 /* FeedSelectAllModel.swift */,
-				803EBB0F26BBE9E700D5D350 /* LoginedUserInfo.swift */,
+				803EBB1426BC021100D5D350 /* FeedModel.swift */,
 			);
 			path = feedSelect;
 			sourceTree = "<group>";
@@ -115,7 +122,7 @@
 			children = (
 				803EBB0D26BAD58100D5D350 /* FeedAddViewController.swift */,
 				803EBB1226BC01D200D5D350 /* FeedUploadModel.swift */,
-				803EBB1426BC021100D5D350 /* FeedModel.swift */,
+				803EBB2126C187DD00D5D350 /* FeedAddCollectionViewCell.swift */,
 			);
 			path = feedInsert;
 			sourceTree = "<group>";
@@ -124,8 +131,26 @@
 			isa = PBXGroup;
 			children = (
 				803EBB1726BC369A00D5D350 /* Common.swift */,
+				803EBB1B26BD268C00D5D350 /* UserDBModel.swift */,
+				803EBB0F26BBE9E700D5D350 /* LoginedUserInfo.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		803EBB1D26BD4F6900D5D350 /* FeedImage */ = {
+			isa = PBXGroup;
+			children = (
+				803EBB1926BC3FF700D5D350 /* FeedImageSelectAllModel.swift */,
+				803EBB1E26BD4F8700D5D350 /* FeedImageModel.swift */,
+			);
+			path = FeedImage;
+			sourceTree = "<group>";
+		};
+		803EBB2026C1878200D5D350 /* FeedHashTag */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FeedHashTag;
 			sourceTree = "<group>";
 		};
 		C9EAFBCE4A75FB6BF0E9CC00 /* Frameworks */ = {
@@ -263,14 +288,17 @@
 				803EBB0C26BA7E0E00D5D350 /* FeedSelectAllModel.swift in Sources */,
 				803EBB1826BC369A00D5D350 /* Common.swift in Sources */,
 				803EBB0A26BA786500D5D350 /* feddViewCell.swift in Sources */,
-				803EBB0626BA59BE00D5D350 /* feedModel.swift in Sources */,
 				0404D5FD26B3C476008C42BC /* ViewController.swift in Sources */,
+				803EBB1C26BD268C00D5D350 /* UserDBModel.swift in Sources */,
+				803EBB1F26BD4F8700D5D350 /* FeedImageModel.swift in Sources */,
 				803EBB0E26BAD58100D5D350 /* FeedAddViewController.swift in Sources */,
-				803EBB0826BA782F00D5D350 /* FeedViewContorollerViewController.swift in Sources */,
+				803EBB1A26BC3FF700D5D350 /* FeedImageSelectAllModel.swift in Sources */,
+				803EBB0826BA782F00D5D350 /* FeedViewContoroller.swift in Sources */,
 				803EBB1526BC021100D5D350 /* FeedModel.swift in Sources */,
 				803EBB1026BBE9E700D5D350 /* LoginedUserInfo.swift in Sources */,
 				0404D5F926B3C476008C42BC /* AppDelegate.swift in Sources */,
 				803EBB1326BC01D200D5D350 /* FeedUploadModel.swift in Sources */,
+				803EBB2226C187DD00D5D350 /* FeedAddCollectionViewCell.swift in Sources */,
 				0404D5FB26B3C476008C42BC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

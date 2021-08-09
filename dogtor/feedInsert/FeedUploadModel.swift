@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 class FeedUploadModel{
     // MARK: Img Upload
     func buildBody(feedModel: FeedModel) -> Data? {
@@ -20,7 +21,7 @@ class FeedUploadModel{
         // 이 배열을 \r\n 으로 조인하여 한 덩어리로 만들어서
         // 데이터로 인코딩한다.
         let boundary = "XXXXX"
-        let mimetype = "image/jpeg"
+        let mimetype = "image/png"
         let headerLines = ["--\(boundary)",
             "Content-Disposition: form-data; name=\"file\"; filename=\"\(feedModel.imageURL!.lastPathComponent)\"",
             "Content-Type: \(mimetype)",
@@ -43,13 +44,12 @@ class FeedUploadModel{
         return data
     }
 
-    func uploadImageFile(feedModel: FeedModel, completionHandler: @escaping(Data?, URLResponse?) -> Void) {
+    func uploadImageFile(feedModel: FeedModel, completionHandler: @escaping(Data?, URLResponse?, Error?) -> Void) {
         
         // 경로를 준비하고
         //let url = URL(string: "\(filepath), ImageUpload.jsp")!
-
+        
         let url = URL(string: "http://\(Common.ipAddr):8080/dogtor_temp/feed_insert.jsp")!
-
 
         // 경로로부터 요청을 생성한다. 이 때 Content-Type 헤더 필드를 변경한다.
         var request = URLRequest(url: url)
@@ -59,20 +59,27 @@ class FeedUploadModel{
         
         // 파일URL로부터 multipart 데이터를 생성하고 업로드한다.
         if let data = buildBody(feedModel: feedModel) {
-            let task = URLSession.shared.uploadTask(with: request, from: data){ data, res, error in
-                completionHandler(data, res)
+            let task = URLSession.shared.uploadTask(with: request, from: data){data, res, error in
                 print("--------------------------------------------------")
-                if let returnData = String(data: data!, encoding: .utf8) {
-                    print(returnData)
+                if let returnData = String(data: data!, encoding: .utf8)?.trimmingCharacters(in: .whitespacesAndNewlines) {
+                    print("returnData : \(returnData)")
                 } else {
                     print("data is empty")
                 }
                 print("--------------------------------------------------")
-                print(res)
+                print(res ?? "none res")
                 print("--------------------------------------------------")
-                print(error)
+                print(error ?? "none error")
                 print("--------------------------------------------------")
+                
+                if error != nil {
+                    print("upload error")
+                    return
+                }
+                
+                completionHandler(data, res, error)
             }
+            
             task.resume()
         }
     }
