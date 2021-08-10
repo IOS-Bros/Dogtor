@@ -13,7 +13,7 @@ class FeedViewContoroller: UIViewController {
     @IBOutlet weak var feedListTableView: UITableView!
     var feedItem: NSMutableArray = NSMutableArray()
     var feedImageItem: NSMutableArray = NSMutableArray()
-    var lastFeedNo = 0
+    
     
     // MARK: - function
     
@@ -38,18 +38,24 @@ class FeedViewContoroller: UIViewController {
         feedItem.removeAllObjects()
         feedImageItem.removeAllObjects()
         feedSelectAllModel.feedDownloaded()
+        initRefresh()
     }
     
-    //인피니트 스크롤시 스피너
-    private func createSpinnerFooter() -> UIView {
-        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 100))
+    //아래로 당겨서 리프레시
+    func initRefresh(){
+        let refresh = UIRefreshControl()
+        refresh.addTarget(self, action: #selector(updateUI(refresh:)), for: .valueChanged)
+        refresh.attributedTitle = NSAttributedString(string: "새로고침")
         
-        let spinner = UIActivityIndicatorView()
-        spinner.center = footerView.center
-        footerView.addSubview(spinner)
-        spinner.startAnimating()
-        
-        return footerView
+        if #available(iOS 10.0, *){
+            feedListTableView.refreshControl = refresh
+        } else {
+            feedListTableView.addSubview(refresh)
+        }
+    }
+    @objc func updateUI(refresh: UIRefreshControl) {
+        refresh.endRefreshing()
+        feedListTableView.reloadData()
     }
     
     /*
@@ -67,11 +73,6 @@ class FeedViewContoroller: UIViewController {
 extension FeedViewContoroller: FeedSelectAllModelProtocol{
     func feedDownloaded(items: NSMutableArray) {
         feedItem = items
-        
-        //마지막으로 로드한 fno를 구함
-        let arraySize = feedItem.count
-        let dto = feedItem[arraySize - 1] as! FeedModel
-        lastFeedNo = dto.fNo!
         
         //데이터를 로드한 후 이미지를 불러온다
         let feedImageSeelectAllModel = FeedImageSelectAllModel()
@@ -102,16 +103,24 @@ extension FeedViewContoroller: UITableViewDelegate, UITableViewDataSource{
         let item: FeedModel = feedItem[indexPath.row] as! FeedModel
         
         cell.no = item.fNo
-        self.lastFeedNo = item.fNo!
         cell.writerName.text = item.fWriter
         cell.submitDate.text = item.fSubmitDate
         cell.content.text = item.fContent
         
+        let hashTagStrs = item.fHashTag
+        cell.hashTagList.removeAll()
+        if hashTagStrs == "none" {
+            
+        } else {
+            let splitedHashTags = hashTagStrs.split(separator: " ")
+            for hashTag in splitedHashTags {
+                cell.hashTagList.append(String(hashTag))
+            }
+            cell.hashTagCollectionView.reloadData()
+        }
+        
         //이미지 검색
         loadImage(item: item, cell: cell)
-
-        
-        
         print("\(indexPath.row)번째 셀의 데이터")
         item.printAllFromSelectModel()
         
@@ -137,26 +146,5 @@ extension FeedViewContoroller: UITableViewDelegate, UITableViewDataSource{
                 cell.feedImage.kf.setImage(with: url)
             }
         }
-    }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let position = scrollView.contentOffset.y
-        let contentHeight = scrollView.contentSize.height
-        
-        if position > (contentHeight - scrollView.frame.size.height - 200) {
-            self.feedListTableView.tableFooterView = createSpinnerFooter()
-            
-            for i in 0...5{
-                lastFeedNo += 1
-                let dto = FeedModel(fNo: lastFeedNo)
-                feedItem.add(dto)
-            }
-            print(lastFeedNo)
-            DispatchQueue.main.async() {
-                self.feedListTableView?.tableFooterView = nil
-            }
-            
-        }
-        
     }
 }//FeedViewContoroller: UITableViewDelegate, UITableViewDataSource

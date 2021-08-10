@@ -38,6 +38,9 @@ class FeedUploadModel{
         let lines3 = ["--\(boundary)","Content-Disposition: form-data; name=\"fWriter\"\r\n","\(feedModel.fWriter)\r\n"]
         data.append(contentsOf: lines3.joined(separator: "\r\n").data(using: .utf8)!)
         
+        let lines4 = ["--\(boundary)","Content-Disposition: form-data; name=\"fHashTag\"\r\n","\(feedModel.fHashTag)\r\n"]
+        data.append(contentsOf: lines4.joined(separator: "\r\n").data(using: .utf8)!)
+        
         // 마지막으로 데이터의 끝임을 알리는 바운더리를 한 번 더 사용한다.
         // 이는 '새로운 개행'이 필요하므로 앞에 \r\n이 있어야 함에 유의 한다.
         data.append(contentsOf: "\r\n--\(boundary)--".data(using:.utf8)!)

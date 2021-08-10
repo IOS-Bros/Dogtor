@@ -27,6 +27,7 @@
 		803EBB1C26BD268C00D5D350 /* UserDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803EBB1B26BD268C00D5D350 /* UserDBModel.swift */; };
 		803EBB1F26BD4F8700D5D350 /* FeedImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803EBB1E26BD4F8700D5D350 /* FeedImageModel.swift */; };
 		803EBB2226C187DD00D5D350 /* FeedAddCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803EBB2126C187DD00D5D350 /* FeedAddCollectionViewCell.swift */; };
+		803EBB2426C2599B00D5D350 /* HashTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803EBB2326C2599B00D5D350 /* HashTagCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		803EBB1B26BD268C00D5D350 /* UserDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDBModel.swift; sourceTree = "<group>"; };
 		803EBB1E26BD4F8700D5D350 /* FeedImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageModel.swift; sourceTree = "<group>"; };
 		803EBB2126C187DD00D5D350 /* FeedAddCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedAddCollectionViewCell.swift; sourceTree = "<group>"; };
+		803EBB2326C2599B00D5D350 /* HashTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		BEC5D6B68CCA7C4C62EFFF19 /* Pods-dogtor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dogtor.debug.xcconfig"; path = "Target Support Files/Pods-dogtor/Pods-dogtor.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,6 +115,7 @@
 				803EBB0926BA786500D5D350 /* feddViewCell.swift */,
 				803EBB0B26BA7E0E00D5D350 /* FeedSelectAllModel.swift */,
 				803EBB1426BC021100D5D350 /* FeedModel.swift */,
+				803EBB2326C2599B00D5D350 /* HashTagCollectionViewCell.swift */,
 			);
 			path = feedSelect;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				803EBB1C26BD268C00D5D350 /* UserDBModel.swift in Sources */,
 				803EBB1F26BD4F8700D5D350 /* FeedImageModel.swift in Sources */,
 				803EBB0E26BAD58100D5D350 /* FeedAddViewController.swift in Sources */,
+				803EBB2426C2599B00D5D350 /* HashTagCollectionViewCell.swift in Sources */,
 				803EBB1A26BC3FF700D5D350 /* FeedImageSelectAllModel.swift in Sources */,
 				803EBB0826BA782F00D5D350 /* FeedViewContoroller.swift in Sources */,
 				803EBB1526BC021100D5D350 /* FeedModel.swift in Sources */,

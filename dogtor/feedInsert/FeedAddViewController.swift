@@ -24,7 +24,6 @@ class FeedAddViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //?? 플레이스홀더 어케쓴거야
-        //tvContent.placeholder = "내용을 입력해주세요!"
         hastTagCollectionView.delegate = self
         hastTagCollectionView.dataSource = self
         
@@ -92,7 +91,16 @@ class FeedAddViewController: UIViewController {
         let feedUploadModel = FeedUploadModel()
         let fContent = tvContent.text.replacingOccurrences(of: "\n", with: "[__empty_space__]")
         let fWriter = writer.trimmingCharacters(in: .whitespacesAndNewlines)
-        let feedModel = FeedModel(fContent: fContent, fWriter: fWriter, imageURL: imageURL)
+        var fHashTag = "none"
+        if hashTagList.count >= 1 {
+            fHashTag = ""
+            for hashTag in hashTagList {
+                fHashTag += "\(hashTag) "
+            }
+            fHashTag = fHashTag.trimmingCharacters(in: .whitespacesAndNewlines)
+        }
+        
+        let feedModel = FeedModel(fContent: fContent, fWriter: fWriter, imageURL: imageURL, hashTag: fHashTag)
         feedModel.printAllFromInsertModel()
         
         feedUploadModel.uploadImageFile(feedModel: feedModel, completionHandler: {data, res, error in

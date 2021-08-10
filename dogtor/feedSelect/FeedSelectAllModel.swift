@@ -58,8 +58,9 @@ class FeedSelectAllModel{
             if let fNo = jsonElement["fNo"] as? String,
                let fSubmitDate = jsonElement["fSubmitDate"] as? String,
                let fContent = jsonElement["fContent"] as? String,
-               let fWriter = jsonElement["fWirter"] as? String{
-                let dto = FeedModel(fNo: Int(fNo)!, fSubmitDate: fSubmitDate, fContent: fContent.replacingOccurrences(of: "[__empty_space__]", with: "\n"), fWriter: fWriter)
+               let fWriter = jsonElement["fWirter"] as? String,
+               let fHashTag = jsonElement["fHashTag"] as? String{
+                let dto = FeedModel(fNo: Int(fNo)!, fSubmitDate: fSubmitDate, fContent: fContent.replacingOccurrences(of: "[__empty_space__]", with: "\n"), fWriter: fWriter, fHashTag: fHashTag)
                 dto.printAllFromSelectModel()
                 locations.add(dto)
             }

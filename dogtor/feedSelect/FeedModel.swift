@@ -14,44 +14,39 @@ class FeedModel{
     var fWriter: String
     var imageName: String?
     var imageURL: URL?
+    var fHashTag: String
     
     //test용
     init (fNo: Int){
         self.fNo = fNo
         fContent = String(fNo)
         fWriter = "Greensky"
-        
+        self.fHashTag = "none"
     }
     
     //insert용 버전
-    init(fContent: String, fWriter: String, imageURL: URL) {
+    init(fContent: String, fWriter: String, imageURL: URL, hashTag: String) {
         self.fContent = fContent
         self.fWriter = fWriter
         self.imageURL = imageURL
+        self.fHashTag = hashTag
     }
     
-    //image table load 후 합본 버전
-    init(fNo: Int, fSubmitDate: String, fContent: String, fWriter: String, imageName: String) {
-        self.fNo = fNo
-        self.fSubmitDate = fSubmitDate
-        self.fContent = fContent
-        self.fWriter = fWriter
-        self.imageName = imageName
-    }
     
     //select시 image없는 초기 버젼
-    init(fNo: Int, fSubmitDate: String, fContent: String, fWriter: String) {
+    init(fNo: Int, fSubmitDate: String, fContent: String, fWriter: String, fHashTag: String) {
         self.fNo = fNo
         self.fSubmitDate = fSubmitDate
         self.fContent = fContent
         self.fWriter = fWriter
+        self.fHashTag = fHashTag
     }
     
     func printAllFromSelectModel(){
-        print("fNo: \(fNo), fContent : \(fContent), fWriter : \(fWriter)")
+        print("fNo: \(fNo), fContent : \(fContent), fWriter : \(fWriter), fHashTag : \(fHashTag)")
     }
     
     func printAllFromInsertModel(){
-        print("fContent : \(fContent), fWriter : \(fWriter), imageURL : \(imageURL!)")
+        print("fContent : \(fContent), fWriter : \(fWriter), imageURL : \(imageURL!), fHashTag : \(fHashTag)")
     }
 }
