@@ -6,13 +6,15 @@
 import UIKit
 import Kingfisher
 
-var feedDicWithNo = [Int: UITableViewCell]()
-
 class FeedViewContoroller: UIViewController {
 
     @IBOutlet weak var feedListTableView: UITableView!
     var feedItem: NSMutableArray = NSMutableArray()
     var feedImageItem: NSMutableArray = NSMutableArray()
+    
+    //####################################
+    let loginedUserid = "greenSky"
+    //####################################
     
     
     // MARK: - function
@@ -58,15 +60,25 @@ class FeedViewContoroller: UIViewController {
         feedListTableView.reloadData()
     }
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "modifyFeedSegue"{
+            let cell = sender as! feddViewCell // 몇번째 cell 인지
+            let detailView = segue.destination as! FeedAddViewController
+            detailView.recieveItems(feedModel: cell.feedModel!, feedImageModel: cell.feedImageModel!)
+            print("[feedModel]")
+            cell.feedModel?.printAllFromSelectModel()
+            print("---------------------------")
+            print("[feedImageModel]")
+            cell.feedImageModel?.printAll()
+        }
     }
-    */
+    
 }
 
 // MARK: - Extiension
@@ -102,7 +114,7 @@ extension FeedViewContoroller: UITableViewDelegate, UITableViewDataSource{
         
         let item: FeedModel = feedItem[indexPath.row] as! FeedModel
         
-        cell.no = item.fNo
+        cell.feedModel = item
         cell.writerName.text = item.fWriter
         cell.submitDate.text = item.fSubmitDate
         cell.content.text = item.fContent
@@ -124,8 +136,8 @@ extension FeedViewContoroller: UITableViewDelegate, UITableViewDataSource{
         print("\(indexPath.row)번째 셀의 데이터")
         item.printAllFromSelectModel()
         
-        //cell 생성시 dic에 추가
-        feedDicWithNo[cell.no!] = cell
+        //선택시 회색배경처리되는거 제거
+        cell.selectionStyle = .none
         
         return cell
     }
@@ -138,6 +150,7 @@ extension FeedViewContoroller: UITableViewDelegate, UITableViewDataSource{
                 let dto = imageDTO as! FeedImageModel
                 if item.fNo == dto.fNo {
                     imagePath = dto.imagePath
+                    cell.feedImageModel = dto
                 }
             }
             guard let _ = imagePath else { return }

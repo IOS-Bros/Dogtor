@@ -11,7 +11,8 @@ class feddViewCell: UITableViewCell {
     
     var hashTagList = [String]()
     
-    var no: Int?
+    var feedModel: FeedModel?
+    var feedImageModel: FeedImageModel?
     @IBOutlet weak var feedImage: UIImageView!
     @IBOutlet weak var writerImage: UIImageView!
     @IBOutlet weak var writerName: UILabel!

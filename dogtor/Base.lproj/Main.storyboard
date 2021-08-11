@@ -360,19 +360,19 @@
                                 </state>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ud7-RQ-j9A">
-                                <rect key="frame" x="20" y="165" width="374" height="623"/>
+                                <rect key="frame" x="0.0" y="165" width="414" height="623"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="feedCell" rowHeight="396" id="B0r-ia-OcY" customClass="feddViewCell" customModule="dogtor" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="374" height="396"/>
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="396"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="B0r-ia-OcY" id="Xb3-2v-XNA">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="396"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="396"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jyr-wf-2Ge">
-                                                    <rect key="frame" x="10" y="11" width="354" height="156"/>
+                                                    <rect key="frame" x="0.0" y="11" width="414" height="156"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </imageView>
@@ -435,6 +435,12 @@
                                                         </collectionViewCell>
                                                     </cells>
                                                 </collectionView>
+                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="댓글 보기" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OMx-EK-3xv">
+                                                    <rect key="frame" x="159" y="351" width="97" height="34"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
@@ -444,7 +450,7 @@
                                             <outlet property="submitDate" destination="QRJ-hc-6Ni" id="jYq-oq-NSu"/>
                                             <outlet property="writerImage" destination="JxS-oL-Rek" id="7Bz-Ud-xmS"/>
                                             <outlet property="writerName" destination="fcQ-5O-hUs" id="5Cf-rC-oAh"/>
-                                            <segue destination="OPo-da-R5V" kind="show" id="hD5-9D-W4g"/>
+                                            <segue destination="TxT-IK-U2R" kind="show" identifier="modifyFeedSegue" id="DV6-gU-J02"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -556,7 +562,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8eh-Za-iac" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3734.7826086956525" y="1158.4821428571429"/>
+            <point key="canvasLocation" x="2745" y="1454"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="q7f-H1-JPk">
@@ -663,7 +669,7 @@
             <objects>
                 <viewController id="YHL-xJ-qcd" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Muo-Fy-hyC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f36-El-GeE">
@@ -1164,6 +1170,9 @@
             <point key="canvasLocation" x="3735" y="3660"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="DV6-gU-J02"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="iu" width="540" height="540"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>

@@ -9,6 +9,18 @@ import Foundation
 
 
 class FeedUploadModel{
+    var type: String
+    var jspFileName: String
+    
+    init(type: String){
+        self.type = type
+        if type == "insert" {
+            jspFileName = "feed_insert.jsp"
+        } else {
+            jspFileName = "feed_update.jsp"
+        }
+    }
+    
     // MARK: Img Upload
     func buildBody(feedModel: FeedModel) -> Data? {
         // 파일을 읽을 수 없다면 nil을 리턴
@@ -41,6 +53,11 @@ class FeedUploadModel{
         let lines4 = ["--\(boundary)","Content-Disposition: form-data; name=\"fHashTag\"\r\n","\(feedModel.fHashTag)\r\n"]
         data.append(contentsOf: lines4.joined(separator: "\r\n").data(using: .utf8)!)
         
+        if type != "insert" {
+            let lines5 = ["--\(boundary)","Content-Disposition: form-data; name=\"fNo\"\r\n","\(feedModel.fNo!)\r\n"]
+            data.append(contentsOf: lines5.joined(separator: "\r\n").data(using: .utf8)!)
+        }
+        
         // 마지막으로 데이터의 끝임을 알리는 바운더리를 한 번 더 사용한다.
         // 이는 '새로운 개행'이 필요하므로 앞에 \r\n이 있어야 함에 유의 한다.
         data.append(contentsOf: "\r\n--\(boundary)--".data(using:.utf8)!)
@@ -52,7 +69,7 @@ class FeedUploadModel{
         // 경로를 준비하고
         //let url = URL(string: "\(filepath), ImageUpload.jsp")!
         
-        let url = URL(string: "http://\(Common.ipAddr):8080/dogtor_temp/feed_insert.jsp")!
+        let url = URL(string: "http://\(Common.ipAddr):8080/dogtor_temp/\(jspFileName)")!
 
         // 경로로부터 요청을 생성한다. 이 때 Content-Type 헤더 필드를 변경한다.
         var request = URLRequest(url: url)

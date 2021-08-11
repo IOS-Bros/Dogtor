@@ -18,21 +18,62 @@ class FeedAddViewController: UIViewController {
     
     let picker = UIImagePickerController()
     var imageURL: URL?
+    var entranceToken = 0
     //##########임시##############
     var writer = "greenSky"
+    //###########################
+    var deliveredFeedModel: FeedModel?
+    var deliveredFeedImageModle: FeedImageModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //?? 플레이스홀더 어케쓴거야
         hastTagCollectionView.delegate = self
         hastTagCollectionView.dataSource = self
-        
         picker.delegate = self
         
         let tapGestureRecognizer = UITapGestureRecognizer(target:self, action: #selector(imageTapped))
         imageView.isUserInteractionEnabled = true
         imageView.addGestureRecognizer(tapGestureRecognizer)
-
+        
+        if entranceToken == 1 {
+            loadData()
+        }
+    }
+    
+    //FeedViewController의 FeedListTable cell 클릭으로 이동했을경우 실행
+    func recieveItems(feedModel: FeedModel, feedImageModel: FeedImageModel){
+        deliveredFeedModel = feedModel
+        deliveredFeedImageModle = feedImageModel
+        entranceToken = 1
+    }
+    
+    //전달받은 값으로 뷰 아이템에 값 채워줌
+    func loadData(){
+        guard let feedDto = deliveredFeedModel else {
+            needMoreDataAlert(3)
+            navigationController?.popViewController(animated: true)
+            return
+        }
+        tvContent.text = feedDto.fContent
+        
+        let hashTagStrs = feedDto.fHashTag
+        if hashTagStrs != "none"  {
+            hashTagList.removeAll()
+            let splitedHashTags = hashTagStrs.split(separator: " ")
+            for hashTag in splitedHashTags {
+                hashTagList.append(String(hashTag))
+            }
+            hastTagCollectionView.reloadData()
+        }
+        
+        guard let feedImageDto = deliveredFeedImageModle else {
+            return
+        }
+        let imagePath = feedImageDto.imagePath
+        if imagePath.isEmpty { return }
+        guard let url = URL(string: imagePath) else { return }
+        imageView.kf.setImage(with: url)
     }
     
     //해시태그 추가 버튼
@@ -88,7 +129,6 @@ class FeedAddViewController: UIViewController {
             return
         }
         
-        let feedUploadModel = FeedUploadModel()
         let fContent = tvContent.text.replacingOccurrences(of: "\n", with: "[__empty_space__]")
         let fWriter = writer.trimmingCharacters(in: .whitespacesAndNewlines)
         var fHashTag = "none"
@@ -99,9 +139,23 @@ class FeedAddViewController: UIViewController {
             }
             fHashTag = fHashTag.trimmingCharacters(in: .whitespacesAndNewlines)
         }
+        var feedModel: FeedModel
+        var feedUploadModel: FeedUploadModel
         
-        let feedModel = FeedModel(fContent: fContent, fWriter: fWriter, imageURL: imageURL, hashTag: fHashTag)
-        feedModel.printAllFromInsertModel()
+        if entranceToken == 1 {
+            feedUploadModel = FeedUploadModel(type: "update")
+            feedModel = deliveredFeedModel!
+            deliveredFeedModel!.imageURL = imageURL
+            deliveredFeedModel!.fContent = fContent
+            deliveredFeedModel!.fHashTag = fHashTag
+            print("[try upadate]")
+            feedModel.printAllFromSelectModel()
+        } else {
+            feedUploadModel = FeedUploadModel(type: "insert")
+            feedModel = FeedModel(fContent: fContent, fWriter: fWriter, imageURL: imageURL, hashTag: fHashTag)
+            print("[try insert]")
+            feedModel.printAllFromInsertModel()
+        }
         
         feedUploadModel.uploadImageFile(feedModel: feedModel, completionHandler: {data, res, error in
             print("Feed Upload Done")
@@ -119,7 +173,6 @@ class FeedAddViewController: UIViewController {
                 self.navigationController?.popViewController(animated: true)
             }
         })
-        
     }
     
     //이미지 갤러리 오픈
@@ -148,8 +201,11 @@ class FeedAddViewController: UIViewController {
         } else if type == 1 {
             title = "이미지가 없습니다."
             msg = "이미지 업로드는 필수입니다."
-        } else {
+        } else if type == 2{
             title = "이미지 업로드에 실패했습니다."
+            msg = "인터넷 연결상태를 확인해 주세요."
+        } else {
+            title = "데이터 로드에 실패했습니다."
             msg = "인터넷 연결상태를 확인해 주세요."
         }
         

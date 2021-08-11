@@ -91,7 +91,6 @@
 		0404D5F726B3C476008C42BC /* dogtor */ = {
 			isa = PBXGroup;
 			children = (
-				803EBB2026C1878200D5D350 /* FeedHashTag */,
 				803EBB1D26BD4F6900D5D350 /* FeedImage */,
 				803EBB1626BC369000D5D350 /* Common */,
 				803EBB1126BC01B400D5D350 /* feedInsert */,
@@ -147,13 +146,6 @@
 				803EBB1E26BD4F8700D5D350 /* FeedImageModel.swift */,
 			);
 			path = FeedImage;
-			sourceTree = "<group>";
-		};
-		803EBB2026C1878200D5D350 /* FeedHashTag */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = FeedHashTag;
 			sourceTree = "<group>";
 		};
 		C9EAFBCE4A75FB6BF0E9CC00 /* Frameworks */ = {
